@@ -1,0 +1,28 @@
+{
+  "name": "saucedemo-playwright-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:report": "playwright show-report",
+    "test:homepage": "playwright test tests/saucedemo-homepage.spec.ts --project=chromium",
+    "test:login": "playwright test tests/login.spec.ts --project=chromium",
+    "test:all": "playwright test",
+    "test:all-chromium": "playwright test --project=chromium",
+    "test:all-browsers": "playwright test",
+    "test:ci": "playwright test --workers=1 --retries=2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.7"
+  }
+}
