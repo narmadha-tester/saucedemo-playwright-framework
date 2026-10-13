@@ -12,6 +12,7 @@
     "test:all": "playwright test",
     "test:all-chromium": "playwright test --project=chromium",
     "test:all-browsers": "playwright test",
+    "test:types": "tsc --noEmit",
     "test:ci": "playwright test --workers=1 --retries=2"
   },
   "keywords": [],
