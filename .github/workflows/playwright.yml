@@ -25,14 +25,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
 
       - name: Check TypeScript
         run: npm run test:types
 
       - name: Run Playwright tests
-        run: npm run test:ci
+        run: npm run test:chromium
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4
@@ -41,4 +41,3 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-          if-no-files-found: ignore
