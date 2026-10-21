@@ -1,5 +1,6 @@
 
 # SauceDemo Playwright Automation Framework
+[![SauceDemo Playwright Tests](https://github.com/narmadha-tester/saucedemo-playwright-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/narmadha-tester/saucedemo-playwright-framework/actions/workflows/playwright.yml)
 
 A UI test automation framework for the SauceDemo web application, built using Playwright Test and TypeScript.
 
