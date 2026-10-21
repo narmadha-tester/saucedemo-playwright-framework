@@ -1,119 +1,93 @@
-SauceDemo Playwright Automation Framework
 
-Project Overview
+# SauceDemo Playwright Automation Framework
 
-This project is an end-to-end test automation framework built using Playwright and TypeScript to test the SauceDemo web application.
+A UI test automation framework for the SauceDemo web application, built using Playwright Test and TypeScript.
 
-Application: https://www.saucedemo.com/
+## Project Overview
 
-Tech Stack
+This project demonstrates end-to-end UI automation using reusable page objects, fixtures, helper utilities, configurable test data, and GitHub Actions CI.
 
-Playwright Test
+**Application:** [SauceDemo](https://www.saucedemo.com/)
 
-TypeScript
+## Tech Stack
 
-Node.js and npm
+- Playwright Test
+- TypeScript
+- Node.js and npm
+- Page Object Model (POM)
+- Reusable fixtures and helper functions
+- Environment configuration with dotenv
+- Git and GitHub
+- GitHub Actions
+- HTML test reporting
 
-Page Object Model (POM)
+## Framework Structure
 
-Reusable fixtures and helper functions
+```text
+.github/workflows/  GitHub Actions workflow
+config/             Environment configuration
+fixtures/           Reusable test fixtures
+pages/              Page Object Model classes
+test-data/          Test data
+tests/              Automated test scenarios
+utils/              Helper functions and utilities
+```
 
-Environment configuration using dotenv
+## Prerequisites
 
-Git and GitHub
+- Node.js and npm
+- Git
 
-GitHub Actions CI
-
-HTML test reporting
-
-Framework Structure
-
-saucedemo-playwright-framework/
-├── .github/
-│   └── workflows/
-│       └── playwright.yml
-├── config/
-│   ├── env.ts
-│   └── test-data.ts
-├── fixtures/
-│   └── test-fixtures.ts
-├── pages/
-│   ├── LoginPage.ts
-│   ├── InventoryPage.ts
-│   ├── CartPage.ts
-│   └── CheckoutPage.ts
-├── test-data/
-│   └── users.ts
-├── tests/
-├── utils/
-│   ├── helpers.ts
-│   └── logger.ts
-├── .env
-├── playwright.config.ts
-├── package.json
-└── tsconfig.json
-
-Prerequisites
-
-Node.js and npm installed
-
-Git installed
-
-Visual Studio Code (recommended)
-
-Installation
+## Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/narmadha-tester/saucedemo-playwright-framework.git
 cd saucedemo-playwright-framework
+```
+
+Install dependencies and Playwright browsers:
+
+```bash
 npm install
 npx playwright install
+```
 
-Create a .env file in the project root and configure the application URL as required.
+## Running Tests
 
-Running Tests
+Run the test suite using the configured npm script:
 
-Run all configured tests:
-
+```bash
 npm test
+```
 
-Run Chromium tests:
+You can also run Playwright directly:
 
-npm run test:chromium
+```bash
+npx playwright test
+```
 
-Run TypeScript type checking:
+## Test Execution
 
-npm run test:types
+The framework has been tested across Chromium, Firefox, and WebKit. The project contains 14 test cases, with 42 successful browser-test executions reported during validation.
 
-Open the HTML report:
+## Continuous Integration
 
-npm run test:report
+GitHub Actions is configured to execute the Playwright tests. See the workflow under `.github/workflows/`.
 
-Test Coverage
+## Key Features
 
-Login and authentication scenarios
+- Page Object Model for reusable page interactions
+- Fixtures and helper utilities
+- Centralized test data
+- Environment configuration
+- Cross-browser test execution
+- Automated execution through GitHub Actions
+- HTML test reporting
 
-Invalid and locked-out user scenarios
+## Author
 
-Product inventory and sorting
+**Narmadha V**
 
-Cart operations
-
-Checkout workflow
-
-Reusable test helpers and fixtures
-
-Reporting and CI
-
-The framework is configured to generate Playwright HTML reports and use GitHub Actions for automated Chromium test execution.
-
-Failure evidence such as screenshots and traces depends on the Playwright configuration.
-
-Design Approach
-
-The framework uses the Page Object Model to separate page locators and actions from test specifications. Reusable fixtures, centralized test data, environment configuration, and helper utilities support maintainability and reuse.
-
-Repository
-
-https://github.com/narmadha-tester/saucedemo-playwright-framework
+[GitHub Profile](https://github.com/narmadha-tester)
