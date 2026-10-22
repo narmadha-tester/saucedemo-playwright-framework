@@ -1,10 +1,8 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { test, expect } from '../fixtures/test-fixtures';
 import { USERS } from '../test-data/users';
 
 test.describe('SauceDemo Login Tests', () => {
-  test('Login with valid credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('Login with valid credentials', async ({ page, loginPage }) => {
 
     await loginPage.navigate();
     await loginPage.login(
@@ -18,8 +16,7 @@ test.describe('SauceDemo Login Tests', () => {
     ).toBeVisible();
   });
 
-  test('Login with locked-out user', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('Login with locked-out user', async ({ page, loginPage }) => {
 
     await loginPage.navigate();
     await loginPage.login(
@@ -32,8 +29,7 @@ test.describe('SauceDemo Login Tests', () => {
     );
   });
 
-  test('Login with invalid credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('Login with invalid credentials', async ({ page, loginPage }) => {
 
     await loginPage.navigate();
     await loginPage.login(
