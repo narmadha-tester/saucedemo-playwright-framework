@@ -15,4 +15,19 @@ const response = await request.get('https://www.saucedemo.com/');
 expect(response.headers()['content-type']).toContain('text/html');
 
 });
+  test('should mock a network response using route', async ({ page }) => {
+    await page.route('https://www.saucedemo.com/', async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'text/html',
+        body: '<html><body><h1>Mocked SauceDemo Page</h1></body></html>',
+      });
+    });
+
+    await page.goto('http://saucedemo.local/');
+
+    await expect(
+      page.getByRole('heading', { name: 'Mocked SauceDemo Page' })
+    ).toBeVisible();
+  });
 });
