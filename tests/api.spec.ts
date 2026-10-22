@@ -24,7 +24,7 @@ expect(response.headers()['content-type']).toContain('text/html');
       });
     });
 
-    await page.goto('http://saucedemo.local/');
+    await page.goto('https://www.saucedemo.com/');
 
     await expect(
       page.getByRole('heading', { name: 'Mocked SauceDemo Page' })
